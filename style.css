@@ -77,7 +77,9 @@ nav {
 .navbar-shopping-cart {
     position: relative;
     cursor: pointer;
+
 }
+/* top: 2px  -- Tener en cuenta */
 
 .navbar-shopping-cart div {
     width: 16px;
@@ -361,14 +363,16 @@ nav {
 
     .cards-container {
         grid-template-columns: repeat(auto-fill, 140px);
-      }
-      .product-card {
+    }
+
+    .product-card {
         width: 140px;
-      }
-      .product-card img {
+    }
+
+    .product-card img {
         width: 140px;
         height: 140px;
-      }
+    }
 }
 
 @media (min-width: 641px) {
