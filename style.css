@@ -163,6 +163,7 @@ nav {
     left: 0;
     position: absolute;
     background: var(--white);
+    width: 70%;
     
     /* position: fixed;
     width: 70%;
@@ -226,7 +227,7 @@ aside {
 
 /* Carrito despegable desktop */
 #carritoContainer {
-    padding: 0 24px;
+    padding: 0 24px 15px;
     box-sizing: border-box;
 }
 
@@ -399,6 +400,7 @@ aside {
     height: 240px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .product-card .product-info {
@@ -455,7 +457,7 @@ aside {
     }
 
     /* cambio -- iba product-detail*/
-    .aside {
+    aside {
         width: 100%;
     }
 
