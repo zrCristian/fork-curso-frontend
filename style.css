@@ -9,16 +9,20 @@
     --lg: 18px;
 }
 
+i {
+    cursor: pointer;
+}
 /* fixed */
 
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif; 
-    /* margin: 61px 0 0 0;      fixed  */
+    margin: 61px 0 0 0;      
+    /* fixed  */
 }
 
 .inactive {
-    display: none;
+    display: none !important; 
 }
 
 nav {
@@ -27,10 +31,10 @@ nav {
     padding: 0 24px;
     border-bottom: 1px solid var(--very-light-pink);
     
-    /* position: fixed;
+    position: fixed;
     margin-top: -61px ;
     background: var(--white);
-    width: 100%; */
+    width: 100%;
     /* fixed */
 }
 
@@ -80,9 +84,8 @@ nav {
     color: var(--very-light-pink);
     font-size: var(--sm);
     cursor: pointer;
-    margin-right: 12px;
-
-    /* margin-right: 59px; */
+    /* margin-right: 12px; */
+    margin-right: 59px;
     /* fixed */
 }
 
@@ -90,8 +93,8 @@ nav {
     position: relative;
     cursor: pointer;
 
-    /* right: 47px;
-    top: 5px; -- Quizas bajar un poco para el UX */
+    right: 47px;
+    top: 3px; 
     /* fixed */
 }
 
@@ -114,8 +117,9 @@ nav {
 .desktop-menu {
     position: absolute;
     top: 53px;
-    right: 57px;
-    /* right: 105px;   fixed */
+    /* right: 57px; */
+    right: 105px;  
+    /* fixed */
     background: var(--white);
     width: 100px;
     height: auto;
@@ -161,14 +165,12 @@ nav {
     padding: 24px;
     top: 61px;
     left: 0;
-    position: absolute;
+    /* position: absolute; */
     background: var(--white);
     width: 70%;
     
-    /* position: fixed;
-    width: 70%;
+    position: fixed;
     height: 100vh;
-    background: var(--white); */
     /* fixed */
 
 }
@@ -177,7 +179,6 @@ nav {
     text-decoration: none;
     color: var(--black);
     font-weight: bold;
-    /* margin-bottom: 24px; */
 }
 
 .mobile-menu ul {
@@ -220,9 +221,10 @@ nav {
 /* Aside carrito container y Detalles de los productos */
 aside {
     width: 360px;
-    position: absolute;
+    position: fixed; /*  Quizas cambio el diseño y no es necesario*/
     right: 0;
     background: var(--white);
+
 }
 
 /* Carrito despegable desktop */
@@ -238,6 +240,7 @@ aside {
 .title-container img {
     transform: rotate(180deg);
     margin-right: 14px;
+    cursor: pointer;
 }
 
 .title {
@@ -387,8 +390,7 @@ aside {
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
-    margin-top: 26px;
-    /* padding-top: 26px; para el fondo negro  --  fixed */
+    padding-top: 26px; /* fixed */
 }
 
 .product-card {
@@ -456,7 +458,6 @@ aside {
         display: none;
     }
 
-    /* cambio -- iba product-detail*/
     aside {
         width: 100%;
     }
