@@ -19,6 +19,7 @@ body {
     font-family: 'Quicksand', sans-serif; 
     margin: 61px 0 0 0;      
     /* fixed  */
+
 }
 
 .inactive {
@@ -35,6 +36,7 @@ nav {
     margin-top: -61px ;
     background: var(--white);
     width: 100%;
+    z-index: 50; /* --AA */
     /* fixed */
 }
 
@@ -165,13 +167,12 @@ nav {
     padding: 24px;
     top: 61px;
     left: 0;
-    /* position: absolute; */
     background: var(--white);
     width: 70%;
     
     position: fixed;
     height: 100vh;
-    /* fixed */
+    overflow: auto;
 
 }
 
@@ -221,20 +222,24 @@ nav {
 /* Aside carrito container y Detalles de los productos */
 aside {
     width: 360px;
+    margin-top: -61px ; /* --AA */
     position: fixed; /*  Quizas cambio el diseño y no es necesario*/
     right: 0;
     background: var(--white);
+    overflow-y: auto;
 
 }
 
 /* Carrito despegable desktop */
 #carritoContainer {
+    height: 100vh;
     padding: 0 24px 15px;
     box-sizing: border-box;
 }
 
 .title-container {
     display: flex;
+    padding-top: 61px; /* --AA */
 }
 
 .title-container img {
@@ -316,7 +321,9 @@ aside {
 
 /*  Detalles de los Productos */
 #productosDetalles {
-    padding-bottom: 24px;
+    margin-bottom: 25px;
+    padding-top: 61px;  /* --AA */
+    height: 100vh;
 }
 
 .product-detail-close {
@@ -324,7 +331,8 @@ aside {
     width: 14px;
     height: 14px;
     position: absolute;
-    top: 24px;
+
+    top: 85px; /* --AA */
     left: 24px;
     z-index: 2;
     padding: 12px;
@@ -343,7 +351,7 @@ aside {
 }
 
 #productosDetalles .product-info {
-    margin: 24px 24px 0 24px;
+    margin: 24px ;
 }
 #productosDetalles .product-info p:nth-child(1) {
     font-weight: bold;
@@ -390,7 +398,8 @@ aside {
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
-    padding-top: 26px; /* fixed */
+    padding: 26px 0; /* fixed */
+
 }
 
 .product-card {
@@ -460,6 +469,10 @@ aside {
 
     aside {
         width: 100%;
+    }
+
+    #productosDetalles {
+        height: auto;
     }
 
     .cards-container {
