@@ -11,7 +11,7 @@ const orderContentContainer = document.querySelector(".my-order-content")
 const checkoutButton = document.querySelector(".primary-button") // layout comprar, despues lo hago
 const addToCartButton = document.querySelector(".add-to-cart-button") 
 const backArrowIcon = document.querySelector(".title-container > img")
-
+const body = document.querySelector("body")
 const productCounterIcon = document.querySelector(".navbar-shopping-cart > div")
 const shoppingCart = document.querySelector(".shopping-cart")
 const ShoppingCartClose = document.getElementsByTagName("i")
@@ -34,19 +34,35 @@ function toggleDesktopMenu () {
     if (!cartAsideContainer.classList.contains("inactive")) cartAsideContainer.classList.add("inactive")
     if (!productDetailAside.classList.contains("inactive")) productDetailAside.classList.add("inactive")
 
+
 }
 
 function toggleMobileMenu () {
     mobileMenu.classList.toggle("inactive")
-    if (!cartAsideContainer.classList.contains("inactive")) cartAsideContainer.classList.add("inactive")
-    if (!productDetailAside.classList.contains("inactive")) productDetailAside.classList.add("inactive")
+    if (!cartAsideContainer.classList.contains("inactive")) {
+        cartAsideContainer.classList.add("inactive")
+        body.classList.add("overflow")
+    } else if (productDetailAside.classList.contains("inactive")) body.classList.toggle("overflow")
+
+    if (!productDetailAside.classList.contains("inactive")) {
+        productDetailAside.classList.add("inactive")
+        body.classList.add("overflow")
+    }
 }
 
 function toggleCartAside () {
     cartAsideContainer.classList.toggle("inactive")
     if (!desktopMenu.classList.contains("inactive")) desktopMenu.classList.add("inactive")
-    if (!mobileMenu.classList.contains("inactive")) mobileMenu.classList.add("inactive")
-    if (!productDetailAside.classList.contains("inactive")) productDetailAside.classList.add("inactive")
+
+    if (!mobileMenu.classList.contains("inactive")) {
+        mobileMenu.classList.add("inactive")
+        body.classList.add("overflow")
+    } else if (productDetailAside.classList.contains("inactive")) body.classList.toggle("overflow")
+
+    if (!productDetailAside.classList.contains("inactive")) {
+        productDetailAside.classList.add("inactive")
+        body.classList.add("overflow")
+    }
 }
 
 function openProductDetailAside () {
@@ -54,14 +70,18 @@ function openProductDetailAside () {
     if (!cartAsideContainer.classList.contains("inactive")) cartAsideContainer.classList.add("inactive")
     if (!mobileMenu.classList.contains("inactive")) mobileMenu.classList.add("inactive")
     if (!desktopMenu.classList.contains("inactive")) desktopMenu.classList.add("inactive")
+
+    body.classList.add("overflow")
 }
 
 function closeProductDetailAside () {
     productDetailAside.classList.add("inactive")
+    body.classList.remove("overflow")
 }
 
 function closeCartAsideContainer () {
     cartAsideContainer.classList.add("inactive")
+    body.classList.remove("overflow")
 }
 
 

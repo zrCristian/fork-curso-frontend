@@ -12,13 +12,14 @@
 i {
     cursor: pointer;
 }
-/* fixed */
 
 body {
-    margin: 0;
     font-family: 'Quicksand', sans-serif; 
     margin: 61px 0 0 0;      
-    /* fixed  */
+}
+
+.overflow {
+    overflow: hidden;
 }
 
 .inactive {
@@ -35,7 +36,7 @@ nav {
     margin-top: -61px ;
     background: var(--white);
     width: 100%;
-    /* fixed */
+    z-index: 50; 
 }
 
 .menu {
@@ -86,7 +87,6 @@ nav {
     cursor: pointer;
     /* margin-right: 12px; */
     margin-right: 59px;
-    /* fixed */
 }
 
 .navbar-shopping-cart {
@@ -95,7 +95,6 @@ nav {
 
     right: 47px;
     top: 3px; 
-    /* fixed */
 }
 
 .navbar-shopping-cart div {
@@ -117,9 +116,7 @@ nav {
 .desktop-menu {
     position: absolute;
     top: 53px;
-    /* right: 57px; */
     right: 105px;  
-    /* fixed */
     background: var(--white);
     width: 100px;
     height: auto;
@@ -165,13 +162,12 @@ nav {
     padding: 24px;
     top: 61px;
     left: 0;
-    /* position: absolute; */
     background: var(--white);
     width: 70%;
     
     position: fixed;
     height: 100vh;
-    /* fixed */
+    overflow: auto;
 
 }
 
@@ -221,20 +217,25 @@ nav {
 /* Aside carrito container y Detalles de los productos */
 aside {
     width: 360px;
-    position: fixed; /*  Quizas cambio el diseño y no es necesario*/
+    margin-top: -61px; 
+    height: 100vh;
+
+    position: fixed;
     right: 0;
     background: var(--white);
-
+    overflow-y: auto;
 }
 
 /* Carrito despegable desktop */
 #carritoContainer {
+    height: 100vh;
     padding: 0 24px 15px;
     box-sizing: border-box;
 }
 
 .title-container {
     display: flex;
+    padding-top: 61px;
 }
 
 .title-container img {
@@ -316,7 +317,7 @@ aside {
 
 /*  Detalles de los Productos */
 #productosDetalles {
-    padding-bottom: 24px;
+    position: fixed;
 }
 
 .product-detail-close {
@@ -324,7 +325,8 @@ aside {
     width: 14px;
     height: 14px;
     position: absolute;
-    top: 24px;
+
+    top: 85px; 
     left: 24px;
     z-index: 2;
     padding: 12px;
@@ -340,11 +342,13 @@ aside {
     height: 360px;
     object-fit: cover;
     border-radius: 0 0 20px 20px;
+    padding-top: 61px;  
 }
 
 #productosDetalles .product-info {
-    margin: 24px 24px 0 24px;
+    margin: 10px 24px 50px;
 }
+
 #productosDetalles .product-info p:nth-child(1) {
     font-weight: bold;
     font-size: var(--md);
@@ -356,14 +360,14 @@ aside {
     color: var(--very-light-pink);
     font-size: var(--md);
     margin-top: 0;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
 }
 
 #productosDetalles .product-info p:nth-child(3) {
     color: var(--very-light-pink);
     font-size: var(--sm);
     margin-top: 0;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
 }
 
 .primary-button {
@@ -390,7 +394,8 @@ aside {
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
-    padding-top: 26px; /* fixed */
+    padding: 26px 0; 
+
 }
 
 .product-card {
@@ -460,6 +465,10 @@ aside {
 
     aside {
         width: 100%;
+    }
+
+    #productosDetalles {
+        height: auto;
     }
 
     .cards-container {
