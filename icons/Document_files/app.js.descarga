@@ -1,0 +1,47 @@
+const body = document.querySelector("body")
+const container = document.querySelector(".container")
+const containerEyes = document.querySelectorAll(".container__eye") 
+const eyes = document.querySelectorAll(".eye") 
+// const eyesBefore = document.getElementsByClassName(".eye > before") 
+const eyesBefore = getComputedStyle(eyes[0], "::before")
+
+
+
+document.addEventListener("mousemove", moveEye)
+
+function moveEye(e) {
+    eyes.forEach( (eye) => {
+
+        let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+        let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+
+        let angleRadians = Math.atan2(y - e.clientY, x - e.clientX);
+        let angleDeg = angleRadians * 180 / Math.PI
+        
+        if (!eye.classList.contains("piña")) {
+            eye.style.transform = `rotate(${angleDeg}deg)`
+        }
+    })
+}
+
+
+containerEyes.forEach( (e, i) => {
+    e.addEventListener("click", () => piña(e, i))
+})
+
+
+function piña (e, i) {
+    eyes[i].style.transform = "rotate(0deg)"
+    eyes[i].classList.toggle("piña")
+
+    // eyes[i].classList.toggle("piña")
+
+
+}
+
+document.addEventListener("click", () => {
+    body.style.background = "#26f"
+    eyes[0].style.border.before = "10px solid #0f0"
+
+})

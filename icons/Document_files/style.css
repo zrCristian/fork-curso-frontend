@@ -1,0 +1,73 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(#a245ff, #520e7f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}
+
+.container {
+    display: flex;
+    /* align-items: center; */
+}
+
+.container .container__eye {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    /* width: 120px;  */
+
+
+    border-radius: 50%;
+    border: 3px solid rgba(47, 32, 150, .3);
+    box-sizing: content-box;
+    margin: 0 20px;
+    cursor: pointer;
+
+}
+
+.container .eye {
+    position: relative;
+    width: 120px; 
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0 0 0 / .4),
+        inset 0 0 15px #a245ff, 
+        inset 0 0 15px #a245ff;
+    transition: border .3s ease, height .3s ease, border-radius .3s ease;
+
+}
+
+
+.container .piña {
+    border-radius: 100%;
+    background: transparent;
+    height: 0px;
+    border-bottom: 7px solid #000;
+}
+
+
+.container .eye::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #000;
+    border: 10px solid #f00;
+
+    box-sizing: border-box;
+}
+
